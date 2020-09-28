@@ -131,6 +131,7 @@ putgitrepo() { # Downloads a gitrepo $1 and places the files in $2 only overwrit
   cfgpath="$2/.dotfiles"
   gitignorepath="${cfgpath}/.gitignore"
   rm -rf "/home/${name}/.dotfiles"
+  rm -rf "/home/${name}/.config"
   git clone --bare $1 "$2/.dotfiles"
   chown -R $name:wheel $cfgpath
   touch $gitignorepath
