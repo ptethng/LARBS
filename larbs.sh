@@ -131,14 +131,14 @@ putgitrepo() { # Downloads a gitrepo $1 and places the files in $2 only overwrit
   cfgpath="$2/.dotfiles"
   gitignorepath="${cfgpath}/.gitignore"
   rm -rf "/home/${name}/.dotfiles"
-  git clone --bare $1 "$2/.cfg"
-  chown -R "$name":wheel $cfgpath
+  git clone --bare $1 "$2/.dotfiles"
+  chown -R $name:wheel $cfgpath
   touch $gitignorepath
   echo ".cfg" >> gitignorepath
-  chown -R "$name":wheel $gitignorepath
+  chown -R $name:wheel $gitignorepath
   /usr/bin/git --git-dir=${cfgpath} --work-tree="home/${name}" checkout
   /usr/bin/git --git-dir=${cfgpath} --work-tree="home/${name}" config --local status.showUntrackedFiles no 
-  chown -R "name":wheel "/home/${name}"
+  chown -R $name:wheel "/home/${name}"
 	}
 
 
