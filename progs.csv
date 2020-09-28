@@ -45,6 +45,7 @@ A,brave-bin,"is an elegant browser with built-in adblocking, tor and other featu
 ,atool,"manages and gives information about archives."
 ,fzf,"is a fuzzy finder tool."
 ,xorg-xbacklight,"enables changing screen brightness levels."
+,wmname,"fixes weird gui java thing"
 A,simple-mtpfs-git,"enables the mounting of cell phones."
 A,dragon-drag-and-drop,"allows drag and drop from the terminal"
 A,gotop-git,"system monitor"
