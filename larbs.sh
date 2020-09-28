@@ -129,12 +129,11 @@ installationloop() { \
 putgitrepo() { # Downloads a gitrepo $1 and places the files in $2 only overwriting conflicts
 	dialog --infobox "Downloading and installing config files..." 4 60
   cfgpath="$2/.cfg"
-  alias config="/usr/bin/git --git-dir=${cfgpath} --work-tree=$HOME"
+  touch "$2/.cfg/.gitignore"
   echo ".cfg" >> "$2/.cfg/.gitignore"
   git clone --bare $1 "$2/.cfg"
-  alias config="/usr/bin/git --git-dir=${cfgpath} --work-tree=$HOME"
-  config checkout
-  config config --local status.showUntrackedFiles no
+  /usr/bin/git --git-dir=${cfgpath} --work-tree=$HOME checkout
+  /usr/bin/git --git-dir=${cfgpath} --work-tree=$HOME config --local status.showUntrackedFiles no 
 	}
 
 
